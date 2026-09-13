@@ -42,7 +42,9 @@ jobs:
       run: |
         cd ~/fox
         export ALLOW_MISSING_DEPENDENCIES=true
+        set +e
         source build/envsetup.sh
+        set -e
         lunch twrp_aurora-eng
         mka recoveryimage
 

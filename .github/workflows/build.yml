@@ -27,10 +27,11 @@ jobs:
 
     - name: Sync OrangeFox
       run: |
-        mkdir ~/fox
+        mkdir -p ~/fox
         cd ~/fox
-        repo init -u https://gitlab.com/OrangeFox/manifest.git -b fox_12.1
-        repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+        git clone https://gitlab.com/OrangeFox/sync.git
+        cd sync
+        ./orangefox_sync.sh --branch 12.1 --path ~/fox
         
     - name: Clone device tree
       run: |

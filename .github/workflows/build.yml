@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir ~/fox
         cd ~/fox
-        repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_14.0
+        repo init -u https://gitlab.com/OrangeFox/manifest.git -b fox_12.1
         repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
         
     - name: Clone device tree

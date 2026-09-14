@@ -1,4 +1,4 @@
-# Android device tree for Xiaomi 24031PN0DC (aurora)
+# Android device tree for Xiaomi 14 Ultra(aurora)
 
 ```
 #

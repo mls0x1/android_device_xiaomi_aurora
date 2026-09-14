@@ -40,6 +40,8 @@ git clone https://github.com/mls0x1/android_device_xiaomi_aurora.git device/xiao
 export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_BUILD_DEVICE=aurora
 export LC_ALL=C  # Required to prevent locale code-generation bugs
+unset JAVAC
+unset LEX
 # Set up build environment
 source build/envsetup.sh
 lunch twrp_aurora-eng

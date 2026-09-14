@@ -26,22 +26,24 @@ This repository contains the device tree to build OrangeFox Recovery for the Xia
 
 If you want to compile this recovery yourself, you need to set up an OrangeFox Android 12.1 build environment.
 
-```
 **1. Initialize the OrangeFox workspace:**
-bash
+```bash
 repo init -u https://gitlab.com/OrangeFox/manifest.git -b fox_12.1
 repo sync -j$(nproc --all) --force-sync
+```
 
 **2. Clone this device tree:**
+```bash
 git clone https://github.com/mls0x1/android_device_xiaomi_aurora.git device/xiaomi/aurora
+```
 
-**3. Build the recovery.**
+**3. Build the recovery:**
+```bash
 # Export necessary variables
 export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_BUILD_DEVICE=aurora
 export LC_ALL=C  # Required to prevent locale code-generation bugs
-unset JAVAC
-unset LEX
+
 # Set up build environment
 source build/envsetup.sh
 lunch twrp_aurora-eng
@@ -50,3 +52,10 @@ lunch twrp_aurora-eng
 mka clean recoveryimage
 mka adbd recoveryimage
 ```
+
+The compiled image will be output to `out/target/product/aurora/recovery.img`.
+
+## 🤝 Credits & Thanks
+* [OrangeFox Recovery Team](https://gitlab.com/OrangeFox)
+* [SebaUbuntu's TWRP device tree generator](https://github.com/SebaUbuntu/TWRP-device-tree-generator) for the initial skeleton
+* Gemini and Claude Opus for debugging assistance

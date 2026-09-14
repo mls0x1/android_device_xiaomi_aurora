@@ -95,3 +95,9 @@ TW_MAX_BRIGHTNESS := 4095
 TW_DEFAULT_BRIGHTNESS := 2048
 OF_MAINTAINER := mls0x1
 
+BOARD_RAMDISK_USE_LZ4 := true
+
+# Touchscreen - load modules with proper dependency resolution via modules.dep
+TW_LOAD_VENDOR_MODULES := "panel_event_notifier.ko gh_irq_lend.ko gh_mem_notifier.ko i2c-msm-geni.ko xiaomi_touch.ko synaptics_tcm2.ko"
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true

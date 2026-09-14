@@ -6,6 +6,7 @@
 /mi_ext                     erofs       /mnt/vendor/mi_ext                         flags=display=mi_ext
 /vendor                     erofs       vendor                                     flags=display=vendor;logical;slotselect
 /odm                        erofs       odm                                        flags=display=odm;logical;slotselect
+/vendor_dlkm                erofs       vendor_dlkm                                flags=display=vendor_dlkm;logical;slotselect
 /metadata                   f2fs        /dev/block/bootdevice/by-name/metadata     flags=display=metadata
 /data                       f2fs        /dev/block/bootdevice/by-name/userdata     flags=display=data
 /sdcard                     vfat        /dev/block/mmcblk0p1                       flags=display=sdcard
